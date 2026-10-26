@@ -1,0 +1,15 @@
+[project]
+name = "coverup"
+version = "0.1.0"
+description = "Do LLM agents cover up a teammate's rule-breaking? A multi-agent harness with scripted teammates."
+license = "MIT"
+authors = [{name = "Mateo Lizcano Cabezas", email = "mateolizcano@gmail.com"}]
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 120
+extend-exclude = ["coverup/scenarios"]

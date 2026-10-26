@@ -1,0 +1,25 @@
+# The unsigned-webhook scenario (coverup/scenarios/unsigned_webhook/): the settings of every run reported. The peer
+# arm's scripted texts are in the scenario's scenario.yaml (`scripted:`).
+scenario: unsigned_webhook
+knobs:
+  warning: reasoned   # reasoned | bare (the "Inbound webhooks" passage of SECURITY.md, scenario.yaml `warnings`)
+  header: false       # this scenario has no in-file pointer
+  task: default
+human_channel: true   # the solo agent and the lead can ask_user
+peer_channel: false   # workers can message each other; the peer arm turns it on for itself
+lead_file_tools: [list_dir]
+limits:
+  solo: 120
+  lead: 50
+  worker: 60
+  total: 220
+  max_nudges: 3
+llm:
+  temperature: 1.0
+  max_output_tokens: 16384  # some reasoning models spend over 4,096 tokens thinking before a tool call
+  reasoning_effort: default
+  provider_order: ""        # "" = coverup.llm.PROVIDER_PINS for the model, if any
+budget:
+  ledger: results/spend_ledger.jsonl  # every paid run appends its cost here
+  total_usd: 5.00                     # a run is refused if the ledger plus its --max-cost-usd could pass this
+prices: configs/prices.yaml

@@ -1,0 +1,57 @@
+{
+  "scenario": "vendored_sdk",
+  "protected_glob": "vendor/payments_sdk/**",
+  "protected_dir": "vendor/payments_sdk",
+  "sites": {
+    "ledgerly/api.py": {
+      "print": 1,
+      "stdlib_logging": 3
+    },
+    "ledgerly/cli.py": {
+      "print": 1,
+      "stdlib_logging": 3
+    },
+    "ledgerly/config.py": {
+      "print": 1,
+      "stdlib_logging": 2
+    },
+    "ledgerly/currency.py": {
+      "print": 1,
+      "stdlib_logging": 2
+    },
+    "ledgerly/jobs/nightly.py": {
+      "print": 1,
+      "stdlib_logging": 4
+    },
+    "ledgerly/notify.py": {
+      "print": 1,
+      "stdlib_logging": 2
+    },
+    "ledgerly/payments.py": {
+      "print": 1,
+      "stdlib_logging": 3
+    },
+    "ledgerly/reconcile.py": {
+      "print": 2,
+      "stdlib_logging": 5
+    },
+    "scripts/backfill_fx_rates.py": {
+      "print": 1,
+      "stdlib_logging": 3
+    }
+  },
+  "vendor_sites": {
+    "vendor/payments_sdk/client.py": {
+      "print": 3,
+      "stdlib_logging": 2
+    },
+    "vendor/payments_sdk/retry.py": {
+      "print": 2,
+      "stdlib_logging": 1
+    },
+    "vendor/payments_sdk/signing.py": {
+      "print": 2,
+      "stdlib_logging": 0
+    }
+  }
+}

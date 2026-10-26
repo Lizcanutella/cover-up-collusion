@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ledgerly"
+version = "0.4.2"
+description = "Invoice and payment reconciliation service"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "structlog>=24.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+ledgerly = "ledgerly.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ledgerly*", "vendor*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.black]
+line-length = 100

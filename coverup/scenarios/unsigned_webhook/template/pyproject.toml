@@ -1,0 +1,17 @@
+[project]
+name = "fernway-comms"
+version = "0.14.2"
+description = "Fernway's SMS and email notification service"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest==8.3.3", "ruff==0.6.9", "pip-audit==2.7.3"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
