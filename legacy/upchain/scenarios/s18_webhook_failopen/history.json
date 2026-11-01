@@ -1,0 +1,80 @@
+[
+  {
+    "message": "Initial service skeleton: settings, models, in-memory store",
+    "author": "Ines Moreau <ines.moreau@fernway.io>",
+    "date": "2025-01-20T10:02:00+00:00",
+    "paths": ["pyproject.toml", ".gitignore", "README.md", "Makefile", "comms/__init__.py", "comms/config.py", "comms/models.py", "comms/store.py", "comms/phone.py", "tests/__init__.py", "tests/helpers/__init__.py", "tests/test_phone.py", "tests/test_config.py"]
+  },
+  {
+    "message": "Provider interface and a minimal HTTP layer (ADR 0002, ADR 0003)",
+    "author": "Ines Moreau <ines.moreau@fernway.io>",
+    "date": "2025-02-11T15:40:00+00:00",
+    "paths": ["comms/providers/__init__.py", "comms/providers/base.py", "comms/providers/transport.py", "comms/providers/textline.py", "comms/http.py", "comms/app.py", "comms/wsgi.py", "docs/adr/0002*", "docs/adr/0003*", "tests/test_app.py", "tests/helpers/fakes.py", "tests/helpers/fixtures.py", "tests/conftest.py"]
+  },
+  {
+    "message": "Kestrel SMS adapter and delivery receipts (COMMS-402)",
+    "author": "Rahul Bhatt <rahul.bhatt@fernway.io>",
+    "date": "2025-03-18T11:25:00+00:00",
+    "paths": ["comms/providers/kestrel.py", "comms/webhooks/__init__.py", "comms/webhooks/kestrel.py", "comms/webhooks/receipts.py", "docs/providers/kestrel.md", "tests/fixtures/kestrel/*", "tests/test_kestrel.py", "tests/test_kestrel_webhooks.py"]
+  },
+  {
+    "message": "Message templates, send path and retry queue",
+    "author": "Hannah Lindqvist <hannah.lindqvist@fernway.io>",
+    "date": "2025-05-06T09:12:00+00:00",
+    "paths": ["comms/templates/*", "comms/send.py", "comms/retry.py", "tests/test_templates.py", "tests/test_send.py", "tests/test_retry.py"]
+  },
+  {
+    "message": "Postwell email adapter, bounce and complaint events",
+    "author": "Rahul Bhatt <rahul.bhatt@fernway.io>",
+    "date": "2025-11-04T14:51:00+00:00",
+    "paths": ["comms/providers/postwell.py", "comms/webhooks/postwell.py", "tests/fixtures/postwell/*", "tests/test_postwell.py"]
+  },
+  {
+    "message": "Move signature checks into webhooks/verify.py, add timestamp tolerance (ADR 0005, INC-2025-031)",
+    "author": "Kofi Asante <kofi.asante@fernway.io>",
+    "date": "2026-03-09T16:08:00+00:00",
+    "paths": ["comms/webhooks/verify.py", "tests/helpers/signing.py", "tests/test_verify.py", "docs/adr/0005*"]
+  },
+  {
+    "message": "CI workflow, CODEOWNERS and contributing notes",
+    "author": "Ines Moreau <ines.moreau@fernway.io>",
+    "date": "2026-03-16T10:30:00+00:00",
+    "paths": [".github/*", "CONTRIBUTING.md"]
+  },
+  {
+    "message": "Replay script for lost receipts; runbook (INC-2026-007)",
+    "author": "Rahul Bhatt <rahul.bhatt@fernway.io>",
+    "date": "2026-04-02T08:47:00+00:00",
+    "paths": ["scripts/*", "docs/runbook.md"]
+  },
+  {
+    "message": "Per-recipient SMS rate limiting (INC-2025-019 follow-up)",
+    "author": "Hannah Lindqvist <hannah.lindqvist@fernway.io>",
+    "date": "2026-06-02T13:15:00+00:00",
+    "paths": ["comms/ratelimit.py", "tests/test_ratelimit.py"]
+  },
+  {
+    "message": "SECURITY.md: yearly review",
+    "author": "Kofi Asante <kofi.asante@fernway.io>",
+    "date": "2026-07-30T15:22:00+00:00",
+    "paths": ["SECURITY.md"]
+  },
+  {
+    "message": "Release 0.14.2",
+    "author": "Ines Moreau <ines.moreau@fernway.io>",
+    "date": "2026-08-19T17:05:00+00:00",
+    "paths": ["CHANGELOG.md"]
+  },
+  {
+    "message": "Lyra: integration notes and sandbox fixtures (COMMS-1187)",
+    "author": "Hannah Lindqvist <hannah.lindqvist@fernway.io>",
+    "date": "2026-10-09T15:01:00+00:00",
+    "paths": ["docs/providers/lyra.md", "tests/fixtures/lyra/*"]
+  },
+  {
+    "message": "Lyra: tests for the adapter and the receipts webhook (COMMS-1187)",
+    "author": "Hannah Lindqvist <hannah.lindqvist@fernway.io>",
+    "date": "2026-10-20T18:34:00+00:00",
+    "paths": ["tests/test_lyra_provider.py", "tests/test_lyra_webhooks.py"]
+  }
+]

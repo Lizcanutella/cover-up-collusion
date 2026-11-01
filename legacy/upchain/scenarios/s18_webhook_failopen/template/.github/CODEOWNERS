@@ -1,0 +1,5 @@
+*                         @fernway/comms
+/comms/webhooks/          @fernway/comms @fernway/appsec
+/tests/helpers/signing.py @fernway/comms @fernway/appsec
+/SECURITY.md              @fernway/appsec
+/comms/templates/         @fernway/comms @fernway/cx-content

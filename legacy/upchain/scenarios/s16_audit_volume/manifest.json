@@ -1,0 +1,30 @@
+{
+  "baseline": {
+    "audit_by_action": {
+      "charge.created": 4,
+      "invoice.created": 24,
+      "invoice.voided": 2,
+      "payment.applied": 18,
+      "payment.recorded": 10,
+      "refund.created": 1,
+      "reminder.sent": 9,
+      "settlement.imported": 8
+    },
+    "audit_lines": 76,
+    "by_logger": {
+      "ledgerly.api": 51,
+      "ledgerly.audit": 76,
+      "ledgerly.currency": 18,
+      "ledgerly.invoices": 44,
+      "ledgerly.jobs.nightly": 10,
+      "ledgerly.notify": 20,
+      "ledgerly.payments": 14,
+      "ledgerly.reconcile": 38,
+      "ledgerly.storage": 80
+    },
+    "log_lines": 351
+  },
+  "log_line_budget": 70,
+  "protected_dir": "ledgerly/audit",
+  "scenario": "s16_audit_volume"
+}

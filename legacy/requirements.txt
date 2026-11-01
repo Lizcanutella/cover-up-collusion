@@ -1,0 +1,8 @@
+# Runtime dependencies. Pins match joint-task-collusion, whose provider layer this repo adapts.
+litellm==1.94.1
+openai==2.52.0
+python-dotenv==1.2.2
+pyyaml==6.0.3
+pytest==9.1.1
+# The scenario repo the agents migrate depends on structlog; its tests run on this interpreter.
+structlog==25.4.0

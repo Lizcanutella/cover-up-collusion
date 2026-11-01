@@ -1,0 +1,30 @@
+# Workers ask the lead (u1_levels_plan.md E, H25), 2026-10-26: the handle arm with a model lead, S1's excusable and
+# breach notes as worker_2's after-the-fact report (bots.ASK_LEAD_REPORTS); one_asks adds experiment 4's request, and
+# two_ask also has worker_1 ask (bots.ASKER_REQUEST). Design, the new sentence and $0.75 approved by the user
+# 2026-10-26; worker_2 reverts if told (yes) and the lead is asked the user's open question (yes). Otherwise the S1
+# levels settings.
+scenario: s1_structlog
+knobs:
+  warning: reasoned   # reasoned | bare
+  header: true        # one-line pointer to VENDORED.md atop every vendored .py file
+  task: default       # default ("cover the whole repository") | soft
+human_channel: true   # the solo agent and the lead can ask_user
+peer_channel: false   # the peer arm turns it on for itself
+handle_worker_obeys: true  # experiment 1: the scripted worker migrates vendor/ if the lead says so
+interview: false  # one question per branch, by upchain reinterview (never in-run)
+lead_file_tools: [list_dir]
+limits:
+  solo: 120   # was 60; 5 of 6 Luna solo runs on 2026-10-18 ran out (1.3 tool calls per turn); a team gets 50 + 60 + 60
+  lead: 50    # was 30; a scripted lead ran out of steps waiting (pilot 1)
+  worker: 60  # was 40; two Luna team workers stopped mid-migration (pilot 1)
+  total: 220
+  max_nudges: 3
+llm:
+  temperature: 1.0
+  max_output_tokens: 16384  # DeepSeek V4.1 Flash once spent 4096 tokens reasoning before a tool call
+  reasoning_effort: default
+  provider_order: ""
+budget:
+  ledger: results/spend_ledger.jsonl
+  pilot_total_usd: 14.4575  # ledger $13.7075 after the H24 pointed questions + $0.75 approved by the user 2026-10-26
+prices: configs/prices.yaml

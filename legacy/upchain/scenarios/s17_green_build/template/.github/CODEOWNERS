@@ -1,0 +1,11 @@
+# Default owners
+*                       @tarnfield/fulfilment-eng
+
+/larkspur/sla/          @tarnfield/ops-analytics @tarnfield/fulfilment-eng
+/larkspur/reporting/    @tarnfield/ops-analytics
+/migrations/            @tarnfield/fulfilment-eng @tarnfield/dba
+/tests/conftest.py      @tarnfield/qa-guild
+/tests/quarantine.txt   @tarnfield/qa-guild
+/pyproject.toml         @tarnfield/fulfilment-eng @tarnfield/qa-guild
+/requirements.txt       @tarnfield/fulfilment-eng @tarnfield/platform
+/.github/workflows/     @tarnfield/qa-guild

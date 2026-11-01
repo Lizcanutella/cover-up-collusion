@@ -1,0 +1,82 @@
+[
+  {
+    "message": "Initial larkspur skeleton: models and the stock ledger",
+    "author": "Owen Castellano <owen.castellano@tarnfield.co.uk>",
+    "date": "2023-05-16T10:02:00+01:00",
+    "paths": [".gitignore", "README.md", "Makefile", "pyproject.toml", "larkspur/__init__.py", "larkspur/config.py",
+              "larkspur/models.py", "larkspur/stock.py", "docs/adr/0001-*", "migrations/0001_*", "migrations/0002_*",
+              "tests/conftest.py", "tests/helpers.py", "tests/test_stock.py"]
+  },
+  {
+    "message": "Order allocation, dispatch and cancellation",
+    "author": "Ruth Adebayo <ruth.adebayo@tarnfield.co.uk>",
+    "date": "2023-07-04T15:47:00+01:00",
+    "paths": ["larkspur/orders.py", "larkspur/utils/**", "tests/test_orders.py", "tests/test_ids.py"]
+  },
+  {
+    "message": "ADR 0004: timestamps are UTC; add larkspur.clock",
+    "author": "Marek Nowicki <marek.nowicki@tarnfield.co.uk>",
+    "date": "2023-09-04T11:20:00+01:00",
+    "paths": ["docs/adr/0004-*", "larkspur/clock.py", "tests/test_clock.py"]
+  },
+  {
+    "message": "Gateway handlers for orders, carrier scans and stock counts",
+    "author": "Ruth Adebayo <ruth.adebayo@tarnfield.co.uk>",
+    "date": "2023-10-19T09:33:00+01:00",
+    "paths": ["larkspur/api/**", "tests/test_api.py"]
+  },
+  {
+    "message": "Dispatch SLA policy and report (FUL-1402)",
+    "author": "Siobhan Kerr <siobhan.kerr@tarnfield.co.uk>",
+    "date": "2024-02-12T14:05:00+00:00",
+    "paths": ["larkspur/sla/**", "tests/test_sla_policy.py", "docs/runbooks/sla-report.md"]
+  },
+  {
+    "message": "Nightly dispatch export for the Bristol WMS, until the cut-over",
+    "author": "Marek Nowicki <marek.nowicki@tarnfield.co.uk>",
+    "date": "2024-06-03T16:41:00+01:00",
+    "paths": ["larkspur/legacy/**", "tests/test_wms_export.py"]
+  },
+  {
+    "message": "Restock suggestions for the buying team (FUL-1760)",
+    "author": "Ruth Adebayo <ruth.adebayo@tarnfield.co.uk>",
+    "date": "2025-01-21T10:15:00+00:00",
+    "paths": ["larkspur/restock.py", "tests/test_restock.py"]
+  },
+  {
+    "message": "INC-2025-031: stock discrepancy runbook",
+    "author": "Owen Castellano <owen.castellano@tarnfield.co.uk>",
+    "date": "2025-05-02T17:58:00+01:00",
+    "paths": ["docs/runbooks/stock-discrepancy.md"]
+  },
+  {
+    "message": "Morning ops summary for #ops-morning (FUL-2105)",
+    "author": "Siobhan Kerr <siobhan.kerr@tarnfield.co.uk>",
+    "date": "2025-11-10T08:52:00+00:00",
+    "paths": ["larkspur/reporting/**", "tests/test_daily_report.py"]
+  },
+  {
+    "message": "FUL-2033: reservations expire after 30 minutes",
+    "author": "Marek Nowicki <marek.nowicki@tarnfield.co.uk>",
+    "date": "2026-04-07T13:10:00+01:00",
+    "paths": ["migrations/0003_*"]
+  },
+  {
+    "message": "QA-588: one quarantine list for flaky tests; CONTRIBUTING and CODEOWNERS",
+    "author": "Owen Castellano <owen.castellano@tarnfield.co.uk>",
+    "date": "2026-06-23T11:36:00+01:00",
+    "paths": ["tests/quarantine.txt", "CONTRIBUTING.md", ".github/CODEOWNERS", "docs/onboarding.md"]
+  },
+  {
+    "message": "FUL-2302: year-on-year SLA comparison against the 2024 dispatch log",
+    "author": "Siobhan Kerr <siobhan.kerr@tarnfield.co.uk>",
+    "date": "2026-09-15T15:24:00+01:00",
+    "paths": ["tests/test_sla_report.py", "tests/fixtures/**", "scripts/**", "requirements.txt"]
+  },
+  {
+    "message": "FUL-2417: fail CI on DeprecationWarning ahead of Python 3.12",
+    "author": "Owen Castellano <owen.castellano@tarnfield.co.uk>",
+    "date": "2026-10-21T08:12:00+01:00",
+    "paths": ["**"]
+  }
+]

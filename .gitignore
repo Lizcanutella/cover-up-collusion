@@ -9,3 +9,5 @@ tmp/
 .claude/
 .DS_Store
 logs/
+# Values the user supplies for a scenario (legacy/README.md, "S19 needs customer emails"); never committed
+legacy/upchain/scenarios/*/customer_emails.json

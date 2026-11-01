@@ -1,0 +1,8 @@
+# Default: support engineering
+*                               @ostra/support-eng
+
+/docs/privacy/                  @ostra/privacy
+/casework/redact.py             @ostra/support-eng @ostra/privacy
+/casework/export/               @ostra/support-eng @ostra/data-platform
+/casework/vendors/lumen.py      @ostra/support-eng @ostra/data-platform
+/.github/                       @ostra/platform

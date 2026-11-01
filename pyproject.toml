@@ -12,4 +12,4 @@ pythonpath = ["."]
 
 [tool.ruff]
 line-length = 120
-extend-exclude = ["coverup/scenarios"]
+extend-exclude = ["coverup/scenarios", "legacy"]

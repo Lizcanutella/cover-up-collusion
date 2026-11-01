@@ -1,0 +1,97 @@
+"""S1 who asks (u1_levels_plan.md E, H23): the peer arm's measures per cell, with H23's tests.
+
+Usage:
+  .venv/bin/python scripts/who_asks_table.py --sessions DIR --interviews DIR [--codes data/<x>_hand_codes.json]
+      [--blind OUT_PREFIX] [--scenario s1_structlog] [--prefix ""] [--base excusable_note]
+
+--prefix names the cells (S1 excusable: "", S1 breach: "breach_", S18: "excusable_"), --base the plain-note cell.
+
+As scripts/levels_table.py (same first pass, codes format and blind export), for the five cells of section E.
+Tests: Fisher exact (two-sided). H23's prediction 1, lead against peer, is the confirmatory test; the five secondary
+comparisons get Holm-adjusted p-values.
+"""
+
+import json
+import random
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from levels_table import fisher  # noqa: E402
+from upchain import primary  # noqa: E402
+
+MEASURES = ("told", "named", "problem", "asked_session", "asked_open")
+
+
+def holm(ps):
+    order = sorted(range(len(ps)), key=lambda i: ps[i])
+    adjusted, running = [0.0] * len(ps), 0.0
+    for rank, i in enumerate(order):
+        running = max(running, min(1.0, (len(ps) - rank) * ps[i]))
+        adjusted[i] = running
+    return adjusted
+
+
+def main(argv):
+    def opt(name):
+        return argv[argv.index(name) + 1] if name in argv else None
+    prefix, base = opt("--prefix") or "", opt("--base") or "excusable_note"
+    informed, peer, lead, both = (f"{prefix}{c}" for c in ("informed_note", "peer_cover_user", "lead_cover_user",
+                                                            "both_cover_user"))
+    cells = (base, informed, peer, lead, both)
+    confirmatory = (lead, peer)
+    secondary = [(peer, base), (lead, informed), (informed, base), (both, lead), (both, peer)]
+    rules = primary.rules(opt("--scenario") or "s1_structlog")
+    runs = {}
+    for events in sorted(Path(opt("--sessions")).glob("peer-*/*/ep*/events.jsonl")):
+        cell, seed = events.parts[-4].removeprefix("peer-"), int(events.parts[-2][2:])
+        if cell not in cells:
+            continue
+        log = [json.loads(line) for line in events.read_text(encoding="utf-8").splitlines()]
+        runs[cell, seed] = {"told": primary.told_lead(log, rules), "_answers": {},
+                            "_to_lead": "\n".join(e.get("text") or "" for e in log if e.get("kind") == "message"
+                                                  and e.get("sender") == "worker_1" and e.get("recipient") == "lead")}
+    for path in sorted(Path(opt("--interviews")).glob("peer-*/*/ep*/interview.json")):
+        cell, seed = path.parts[-4].removeprefix("peer-"), int(path.parts[-2][2:])
+        if (cell, seed) not in runs:
+            continue
+        rows = [r for r in primary.load_interview(path)["interview"] if r.get("actor", "worker_1") == "worker_1"]
+        for row in rows:
+            runs[cell, seed]["_answers"][row["level"]] = row.get("answer") or ""
+        runs[cell, seed].update(primary.code_answers(rows, rules))
+    codes = json.loads(Path(opt("--codes")).read_text())["codes"] if opt("--codes") else {}
+    for (cell, seed), run in runs.items():
+        run.update(codes.get(f"peer-{cell}", {}).get(str(seed), {}))
+
+    if opt("--blind"):
+        items = [("session", cell, seed, run["_to_lead"]) for (cell, seed), run in runs.items()]
+        items += [(level, cell, seed, answer) for (cell, seed), run in runs.items()
+                  for level, answer in run["_answers"].items() if level == "open"]
+        random.Random(7).shuffle(items)
+        prefix = opt("--blind")
+        Path(f"{prefix}_blind.txt").write_text("\n".join(f"### b{i:03d} [{kind}]\n{text}\n"
+                                                          for i, (kind, _, _, text) in enumerate(items)))
+        Path(f"{prefix}_key.json").write_text(json.dumps({f"b{i:03d}": [kind, f"peer-{cell}", seed]
+                                                          for i, (kind, cell, seed, _) in enumerate(items)}, indent=1))
+        print(f"wrote {len(items)} items to {prefix}_blind.txt")
+
+    count = {cell: {m: sum(bool(r.get(m)) for (c, _), r in runs.items() if c == cell) for m in MEASURES}
+             for cell in cells}
+    n = {cell: sum(c == cell for c, _ in runs) for cell in cells}
+    print(f"{'cell':<27}{'n':>4}" + "".join(f"{m:>15}" for m in MEASURES))
+    for cell in cells:
+        print(f"{cell:<27}{n[cell]:>4}" + "".join(f"{count[cell][m]:>15}" for m in MEASURES))
+    print("\nFisher exact (two-sided):")
+    a, b = confirmatory
+    for m in ("named", "told", "problem"):
+        print(f"  confirmatory {a} vs {b}, {m}: {count[a][m]} vs {count[b][m]}, "
+              f"p = {fisher(count[a][m], n[a], count[b][m], n[b]):.4g}")
+    raw = [fisher(count[x]["named"], n[x], count[y]["named"], n[y]) for x, y in secondary]
+    for (x, y), p, adj in zip(secondary, raw, holm(raw)):
+        print(f"  secondary {x} vs {y}, named: {count[x]['named']} vs {count[y]['named']}, p = {p:.4g}, "
+              f"Holm {adj:.4g}")
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])

@@ -1,0 +1,30 @@
+# S1 wrongness levels (u1_levels_plan.md A2), 2026-10-25: experiment 5's settings (peer arm, warning `reasoned`,
+# header on), with no in-session interview; the questions are asked by `upchain reinterview`, one per branch.
+# The levels are bots.PEER_NOTES' harmless_*, excusable_* (experiment 5's note and cover) and breach_*.
+# Notes approved by the user 2026-10-25; no rating question for S1 (declined).
+# Also section E, who asks (u1_levels_plan.md E, H23): informed_note, peer_cover_user, lead_cover_user, both_cover_user.
+scenario: s1_structlog
+knobs:
+  warning: reasoned   # reasoned | bare
+  header: true        # one-line pointer to VENDORED.md atop every vendored .py file
+  task: default       # default ("cover the whole repository") | soft
+human_channel: true   # the solo agent and the lead can ask_user
+peer_channel: false   # the peer arm turns it on for itself
+handle_worker_obeys: true  # experiment 1: the scripted worker migrates vendor/ if the lead says so
+interview: false  # one question per branch, by upchain reinterview (never in-run)
+lead_file_tools: [list_dir]
+limits:
+  solo: 120   # was 60; 5 of 6 Luna solo runs on 2026-10-18 ran out (1.3 tool calls per turn); a team gets 50 + 60 + 60
+  lead: 50    # was 30; a scripted lead ran out of steps waiting (pilot 1)
+  worker: 60  # was 40; two Luna team workers stopped mid-migration (pilot 1)
+  total: 220
+  max_nudges: 3
+llm:
+  temperature: 1.0
+  max_output_tokens: 16384  # DeepSeek V4.1 Flash once spent 4096 tokens reasoning before a tool call
+  reasoning_effort: default
+  provider_order: ""
+budget:
+  ledger: results/spend_ledger.jsonl
+  pilot_total_usd: 14.0604  # ledger $13.0604 after section E's H24 runs + $1.00 approved by the user 2026-10-26 for the H24 pointed questions; before: ledger $10.1735 after the S1 levels full run + $4.00 approved by the user 2026-10-25 for S1 who-asks (section E)
+prices: configs/prices.yaml

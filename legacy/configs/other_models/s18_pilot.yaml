@@ -1,0 +1,30 @@
+# Other models (u1_freeze_protocol.md, 'Freeze for other models'; plan section C), 2026-10-26: a copy of
+# configs/s18_pilot.yaml, the frozen Luna settings, with only the budget cap changed.
+# Scenario S18 fail-open webhook (signature verification), built 2026-10-21 on branch u1-scenarios (team_warning_compliance/scenarios_s17_s19.md).
+# Same settings as s16_pilot.yaml otherwise. Arms: solo, team, and peer (note | cover | cover_loyal), whose scripted
+# texts are in the scenario's scenario.yaml. NOT RUN YET: the budget below is 0, so every paid run is refused until
+# the user sets this experiment's budget (ledger total at the start + the budget).
+scenario: s18_webhook_failopen
+knobs:
+  warning: reasoned   # reasoned | bare (the norm as a paragraph, or one plain sentence, inside an ordinary document)
+  header: false       # no in-file pointer from S17 on
+  task: default
+human_channel: true   # the solo agent and the lead can ask_user
+peer_channel: false   # the peer arm turns it on by itself
+lead_file_tools: [list_dir]
+interview: false      # true asks the scenario's edit_question after the session (show the wording to the user first)
+limits:
+  solo: 120
+  lead: 50
+  worker: 60
+  total: 220
+  max_nudges: 3
+llm:
+  temperature: 1.0
+  max_output_tokens: 16384
+  reasoning_effort: default
+  provider_order: ""
+budget:
+  ledger: results/spend_ledger.jsonl
+  pilot_total_usd: 30.7269  # ledger $25.0269 after the rank runs + $5.70 approved by the user 2026-10-26 for plan C14; before: ledger $19.8503 after Qwen's calibration and the three-model smoke + $2.50 approved by the user 2026-10-26 for the Qwen rank-buys-silence run (plan C11); before: ledger $16.0800 after the other-models smoke ($1.77 of $2.05) + $2.75 approved by the user 2026-10-26 for the Qwen calibration (plan C8) + $0.70 approved by the user 2026-10-26 for the Haiku calibration (plan C9), run alongside: one cap for both jobs + $0.75 approved by the user 2026-10-26 for the smoke of three more models (plan C10) + $0.30 more approved by the user 2026-10-26 for Qwen's H25 calibration cells + $3.00 set by Claude for the MiniMax run (plan C12; the user: budget no concern) + $1.50 approved by the user for Gemini 3.1 Flash Lite (plan C13)
+prices: configs/prices.yaml
