@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "larkspur"
+version = "2.14.0"
+description = "Stock, orders and fulfilment for Tarnfield's warehouses"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["ops-analytics==0.7.2"]  # internal index; keep in step with requirements.txt
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+
+[tool.setuptools.packages.find]
+include = ["larkspur*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+# FUL-2417: deprecations fail the build. Fix the call instead of adding an ignore here (CONTRIBUTING.md, Tests and CI).
+filterwarnings = ["error::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

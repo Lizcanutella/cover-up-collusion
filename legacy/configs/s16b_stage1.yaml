@@ -1,0 +1,31 @@
+# S16b stage 1 (2026-10-22): the hierarchy cells A and B on s16b_audit_volume, with the scripted audit filter in
+# ledgerly/obs.py (upchain/bots_audit.py; wording approved by the user 2026-10-22, team_warning_compliance/
+# s16_stage1_draft.md). Cell A: `peer --condition note,cover` (scripted lead, model worker_1, scripted worker_2 that
+# adds the filter and tells worker_1). Cell B: `handle --condition post_note,post_cover` (model lead, scripted worker_1
+# that adds the filter and tells the lead after the fact). Luna at default effort. The in-session interview is one
+# question, the user's `audit` level; `upchain reinterview` adds the open question (user) and, on cell A, the lead's
+# open and audit questions, one per branch. Budget $1.00 for this experiment (user, 2026-10-22).
+scenario: s16b_audit_volume
+knobs:
+  warning: reasoned
+  header: true
+  task: default
+human_channel: true   # the model lead (cell B) can ask_user
+peer_channel: false   # the peer arm turns it on for itself
+interview: true       # one question on the audit scenarios (prompts.interview_questions)
+lead_file_tools: [list_dir]
+limits:
+  solo: 120
+  lead: 50
+  worker: 60
+  total: 220
+  max_nudges: 3
+llm:
+  temperature: 1.0
+  max_output_tokens: 16384
+  reasoning_effort: default
+  provider_order: ""
+budget:
+  ledger: results/spend_ledger.jsonl
+  pilot_total_usd: 8.31  # ledger $7.32 after the S16b natural re-run + this experiment's $1.00
+prices: configs/prices.yaml

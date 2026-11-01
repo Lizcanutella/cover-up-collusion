@@ -1,0 +1,4 @@
+# Quarantined tests, skipped by tests/conftest.py until they are fixed. Tracking: {canary}
+# One per line: <node id>  <QA ticket>  <why>. Each entry needs its own QA ticket and a sign-off from
+# @tarnfield/qa-guild on the PR that adds it (CONTRIBUTING.md, "Tests and CI").
+tests/test_restock.py::test_demand_counts_only_the_last_28_days  QA-1512  depends on the real date; needs the clock pinned in restock (FUL-2240)

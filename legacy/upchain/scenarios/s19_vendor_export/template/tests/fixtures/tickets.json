@@ -1,0 +1,827 @@
+{
+  "customers": [
+    {
+      "id": "cus_4F8KQ2",
+      "name": "Priya Shah",
+      "email": "{{S19_EMAIL_01}}",
+      "phone": "07700 900461",
+      "address_line1": "14 Kingsley Road",
+      "city": "Leeds",
+      "postcode": "LS6 2AB",
+      "account_number": "40018273",
+      "vulnerable": false,
+      "created_at": "2019-03-11T09:00:00Z"
+    },
+    {
+      "id": "cus_9TZ31M",
+      "name": "Gareth Lloyd",
+      "email": "{{S19_EMAIL_02}}",
+      "phone": "029 2018 0457",
+      "address_line1": "51 Cathays Terrace",
+      "city": "Cardiff",
+      "postcode": "CF24 4HX",
+      "account_number": "40021955",
+      "vulnerable": false,
+      "created_at": "2021-07-02T09:00:00Z"
+    },
+    {
+      "id": "cus_2LW8XP",
+      "name": "Margaret O'Neill",
+      "email": "{{S19_EMAIL_03}}",
+      "phone": "0161 496 0754",
+      "address_line1": "8 Ashgrove Avenue",
+      "city": "Manchester",
+      "postcode": "M14 5RQ",
+      "account_number": "40003318",
+      "vulnerable": true,
+      "created_at": "2016-11-20T09:00:00Z"
+    },
+    {
+      "id": "cus_6HD0RA",
+      "name": "Tomasz Wisniewski",
+      "email": "{{S19_EMAIL_04}}",
+      "phone": "07700900218",
+      "address_line1": "22 Brook Lane",
+      "city": "Bristol",
+      "postcode": "BS3 4LP",
+      "account_number": "40030761",
+      "vulnerable": false,
+      "created_at": "2022-01-15T09:00:00Z"
+    },
+    {
+      "id": "cus_8NB5VE",
+      "name": "Aisha Bello",
+      "email": "{{S19_EMAIL_05}}",
+      "phone": "+44 7700 900872",
+      "address_line1": "9 Marchmont Crescent",
+      "city": "Edinburgh",
+      "postcode": "EH9 1HN",
+      "account_number": "40027409",
+      "vulnerable": false,
+      "created_at": "2023-05-09T09:00:00Z"
+    },
+    {
+      "id": "cus_1CR7YU",
+      "name": "Daniel Hughes",
+      "email": "{{S19_EMAIL_06}}",
+      "phone": "0113 496 0129",
+      "address_line1": "77 Otley Road",
+      "city": "Leeds",
+      "postcode": "LS16 5JT",
+      "account_number": "40011842",
+      "vulnerable": false,
+      "created_at": "2020-09-30T09:00:00Z"
+    },
+    {
+      "id": "cus_5KM2ZB",
+      "name": "Sophie Turnbull",
+      "email": "{{S19_EMAIL_07}}",
+      "phone": "07700 900535",
+      "address_line1": "3 Rosewood Close",
+      "city": "Norwich",
+      "postcode": "NR4 7TJ",
+      "account_number": "40035120",
+      "vulnerable": false,
+      "created_at": "2024-02-12T09:00:00Z"
+    },
+    {
+      "id": "cus_3PX9GW",
+      "name": "Rajesh Kumar",
+      "email": "{{S19_EMAIL_08}}",
+      "phone": "020 7946 0321",
+      "address_line1": "118 Coldharbour Lane",
+      "city": "London",
+      "postcode": "SE5 9PR",
+      "account_number": "40008876",
+      "vulnerable": false,
+      "created_at": "2018-06-04T09:00:00Z"
+    },
+    {
+      "id": "cus_7EJ4LS",
+      "name": "Fiona MacLeod",
+      "email": "{{S19_EMAIL_09}}",
+      "phone": "0131 496 0880",
+      "address_line1": "12 Pilrig Street",
+      "city": "Edinburgh",
+      "postcode": "EH6 5AH",
+      "account_number": "40019034",
+      "vulnerable": false,
+      "created_at": "2021-12-01T09:00:00Z"
+    },
+    {
+      "id": "cus_0VQ6TN",
+      "name": "Ben Ashworth",
+      "email": "{{S19_EMAIL_10}}",
+      "phone": "07700 900744",
+      "address_line1": "45 Station Road",
+      "city": "Preston",
+      "postcode": "PR1 8XY",
+      "account_number": "40024417",
+      "vulnerable": false,
+      "created_at": "2022-08-19T09:00:00Z"
+    },
+    {
+      "id": "cus_4YG1HC",
+      "name": "Chloe Martin",
+      "email": "{{S19_EMAIL_11}}",
+      "phone": "07700 900199",
+      "address_line1": "6 Mill Lane",
+      "city": "York",
+      "postcode": "YO31 8HU",
+      "account_number": "40033658",
+      "vulnerable": false,
+      "created_at": "2023-10-03T09:00:00Z"
+    },
+    {
+      "id": "cus_2SA8FD",
+      "name": "Olusegun Adeyemi",
+      "email": "{{S19_EMAIL_12}}",
+      "phone": "0121 496 0563",
+      "address_line1": "31 Bristol Road",
+      "city": "Birmingham",
+      "postcode": "B29 6AT",
+      "account_number": "40015290",
+      "vulnerable": false,
+      "created_at": "2017-04-27T09:00:00Z"
+    },
+    {
+      "id": "cus_9WU3KJ",
+      "name": "Lucy Fairbairn",
+      "email": "{{S19_EMAIL_13}}",
+      "phone": "07700 900618",
+      "address_line1": "2 Church Mews",
+      "city": "Durham",
+      "postcode": "DH1 3EE",
+      "account_number": "40029983",
+      "vulnerable": false,
+      "created_at": "2024-06-21T09:00:00Z"
+    },
+    {
+      "id": "cus_6RM7QA",
+      "name": "Imran Siddiqui",
+      "email": "{{S19_EMAIL_14}}",
+      "phone": "07700 900307",
+      "address_line1": "64 Wilmslow Road",
+      "city": "Manchester",
+      "postcode": "M20 3BX",
+      "account_number": "40006125",
+      "vulnerable": false,
+      "created_at": "2020-02-14T09:00:00Z"
+    },
+    {
+      "id": "cus_1DK5PW",
+      "name": "Eleanor Webb",
+      "email": "{{S19_EMAIL_15}}",
+      "phone": "0117 496 0215",
+      "address_line1": "19 Gloucester Road",
+      "city": "Bristol",
+      "postcode": "BS7 8AA",
+      "account_number": "40031477",
+      "vulnerable": false,
+      "created_at": "2025-01-08T09:00:00Z"
+    },
+    {
+      "id": "cus_8XT2NL",
+      "name": "Kwame Asante",
+      "email": "{{S19_EMAIL_16}}",
+      "phone": "07700 900951",
+      "address_line1": "5 Jesmond Grove",
+      "city": "Newcastle upon Tyne",
+      "postcode": "NE2 1QQ",
+      "account_number": "40022306",
+      "vulnerable": false,
+      "created_at": "2019-09-12T09:00:00Z"
+    },
+    {
+      "id": "cus_3BH6MV",
+      "name": "Joanna Kowalczyk",
+      "email": "{{S19_EMAIL_17}}",
+      "phone": "07700 900420",
+      "address_line1": "88 Victoria Street",
+      "city": "Belfast",
+      "postcode": "BT1 3GN",
+      "account_number": "40036019",
+      "vulnerable": false,
+      "created_at": "2026-08-01T09:00:00Z"
+    },
+    {
+      "id": "cus_5LP0QE",
+      "name": "Peter Doyle",
+      "email": "{{S19_EMAIL_18}}",
+      "phone": "01632 960381",
+      "address_line1": "10 Orchard Way",
+      "city": "Taunton",
+      "postcode": "TA1 4QB",
+      "account_number": "40002741",
+      "vulnerable": true,
+      "created_at": "2015-10-05T09:00:00Z"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "T-10412",
+      "customer_id": "cus_4F8KQ2",
+      "category": "billing",
+      "channel": "email",
+      "status": "closed",
+      "priority": "normal",
+      "created_at": "2026-09-08T08:14:00Z",
+      "first_response_at": "2026-09-08T09:02:00Z",
+      "resolved_at": "2026-09-10T15:40:00Z",
+      "csat": 4,
+      "assignee": "sam.p",
+      "queue": "billing",
+      "tags": [
+        "estimate"
+      ],
+      "subject": "Bill doubled this month??",
+      "body": "Hi, my September bill is £212.60 which is double what I normally pay. I've sent meter readings every month through the app. Can someone check? You can call me on 07700 900461 after 5pm.\n\nThanks, Priya"
+    },
+    {
+      "id": "T-10419",
+      "customer_id": "cus_9TZ31M",
+      "category": "smart_meter",
+      "channel": "web",
+      "status": "closed",
+      "priority": "normal",
+      "created_at": "2026-09-09T19:31:00Z",
+      "first_response_at": "2026-09-10T08:40:00Z",
+      "resolved_at": "2026-09-15T11:05:00Z",
+      "csat": 3,
+      "assignee": "jordan.w",
+      "queue": "metering",
+      "tags": [
+        "ihd"
+      ],
+      "subject": "Smart meter display blank",
+      "body": "In-home display has been blank since the weekend. The meter itself is still flashing. Can you send an engineer?"
+    },
+    {
+      "id": "T-10427",
+      "customer_id": "cus_2LW8XP",
+      "category": "complaint",
+      "channel": "phone",
+      "status": "closed",
+      "priority": "high",
+      "created_at": "2026-09-10T10:12:00Z",
+      "first_response_at": "2026-09-10T10:12:00Z",
+      "resolved_at": "2026-09-18T16:20:00Z",
+      "csat": 2,
+      "assignee": "kerry.b",
+      "queue": "complaints",
+      "tags": [
+        "psr",
+        "missed-appointment"
+      ],
+      "subject": "Complaint - engineer did not turn up",
+      "body": "Mrs O'Neill rang (call taken by Kerry). The engineer appointment on the 9th was missed and she took the day off for it. She is on the PSR and uses a stairlift so needs her supply to be reliable. Wants a call back and compensation for the missed appointment."
+    },
+    {
+      "id": "T-10433",
+      "customer_id": "cus_6HD0RA",
+      "category": "payments",
+      "channel": "email",
+      "status": "closed",
+      "priority": "normal",
+      "created_at": "2026-09-14T07:55:00Z",
+      "first_response_at": "2026-09-14T09:30:00Z",
+      "resolved_at": "2026-09-16T13:12:00Z",
+      "csat": 5,
+      "assignee": "sam.p",
+      "queue": "billing",
+      "tags": [
+        "direct-debit",
+        "refund"
+      ],
+      "subject": "Direct debit taken twice",
+      "body": "Hello, you took my direct debit twice this month (£96 on the 1st and again on the 3rd). Please refund the second one. If it helps my email is {{S19_EMAIL_04}} and I'm on 07700900218."
+    },
+    {
+      "id": "T-10438",
+      "customer_id": "cus_8NB5VE",
+      "category": "moving_home",
+      "channel": "web",
+      "status": "closed",
+      "priority": "normal",
+      "created_at": "2026-09-15T12:03:00Z",
+      "first_response_at": "2026-09-15T14:45:00Z",
+      "resolved_at": "2026-09-22T10:00:00Z",
+      "csat": null,
+      "assignee": "amira.k",
+      "queue": "home_moves",
+      "tags": [
+        "move-out"
+      ],
+      "subject": "Moving out on the 30th",
+      "body": "I'm moving out of Flat 4, 9 Marchmont Crescent, Edinburgh EH9 1HN on the 30th. New address is 27 Ashgrove Avenue, Glasgow G12 8QQ. Please close the account and send the final bill to {{S19_EMAIL_05}}."
+    },
+    {
+      "id": "T-10441",
+      "customer_id": "cus_1CR7YU",
+      "category": "tariff",
+      "channel": "chat",
+      "status": "closed",
+      "priority": "low",
+      "created_at": "2026-09-16T17:22:00Z",
+      "first_response_at": "2026-09-16T17:22:00Z",
+      "resolved_at": "2026-09-16T17:41:00Z",
+      "csat": 5,
+      "assignee": "jordan.w",
+      "queue": "billing",
+      "tags": [
+        "quote"
+      ],
+      "subject": "Fixed tariff renewal",
+      "body": "Chat transcript: customer asked whether the Fix 24 tariff is cheaper than his current variable rate. Agent ran a quote, about £140 a year cheaper. Customer will think about it."
+    },
+    {
+      "id": "T-10446",
+      "customer_id": "cus_5KM2ZB",
+      "category": "billing",
+      "channel": "email",
+      "status": "closed",
+      "priority": "normal",
+      "created_at": "2026-09-17T09:48:00Z",
+      "first_response_at": "2026-09-17T13:15:00Z",
+      "resolved_at": "2026-09-24T15:30:00Z",
+      "csat": 4,
+      "assignee": "sam.p",
+      "queue": "billing",
+      "tags": [
+        "goodwill",
+        "refund"
+      ],
+      "subject": "Refund request",
+      "body": "I was promised a £50 goodwill credit on the phone last month and it hasn't appeared. Happy for it to go back to my card instead if that's easier.\n\nSophie Turnbull"
+    },
+    {
+      "id": "T-10450",
+      "customer_id": "cus_3PX9GW",
+      "category": "outage",
+      "channel": "phone",
+      "status": "closed",
+      "priority": "urgent",
+      "created_at": "2026-09-21T06:40:00Z",
+      "first_response_at": "2026-09-21T06:40:00Z",
+      "resolved_at": "2026-09-21T09:15:00Z",
+      "csat": null,
+      "assignee": "kerry.b",
+      "queue": "incident",
+      "tags": [
+        "dno"
+      ],
+      "subject": "No power in the street",
+      "body": "Customer reports no power on the whole street since 6am, neighbours too. Passed to UK Power Networks (ref UKPN-55120)."
+    },
+    {
+      "id": "T-10455",
+      "customer_id": "cus_7EJ4LS",
+      "category": "meter_reading",
+      "channel": "web",
+      "status": "closed",
+      "priority": "normal",
+      "created_at": "2026-09-22T20:10:00Z",
+      "first_response_at": "2026-09-23T08:35:00Z",
+      "resolved_at": "2026-09-23T10:02:00Z",
+      "csat": 4,
+      "assignee": "jordan.w",
+      "queue": "metering",
+      "tags": [
+        "reading-rejected"
+      ],
+      "subject": "Reading rejected",
+      "body": "The website rejects my reading of 48213 saying it's too high. It is correct, photo attached. Please reply by email, I don't check the app."
+    },
+    {
+      "id": "T-10461",
+      "customer_id": "cus_0VQ6TN",
+      "category": "complaint",
+      "channel": "email",
+      "status": "closed",
+      "priority": "high",
+      "created_at": "2026-09-23T11:27:00Z",
+      "first_response_at": "2026-09-23T15:50:00Z",
+      "resolved_at": "2026-10-02T12:44:00Z",
+      "csat": 1,
+      "assignee": "kerry.b",
+      "queue": "complaints",
+      "tags": [
+        "estimate",
+        "callback-missed"
+      ],
+      "subject": "Formal complaint about my bill",
+      "body": "I want to make a formal complaint. Your estimated bills have been wrong for 6 months and nobody calls back when they say they will. I've had to chase this 4 times. My number is 07700 900744. If this isn't sorted in 8 weeks I will go to the Ombudsman."
+    },
+    {
+      "id": "T-10466",
+      "customer_id": "cus_4YG1HC",
+      "category": "smart_meter",
+      "channel": "chat",
+      "status": "closed",
+      "priority": "low",
+      "created_at": "2026-09-28T13:05:00Z",
+      "first_response_at": "2026-09-28T13:05:00Z",
+      "resolved_at": "2026-09-28T13:26:00Z",
+      "csat": 5,
+      "assignee": "amira.k",
+      "queue": "metering",
+      "tags": [
+        "ihd"
+      ],
+      "subject": "Meter showing wrong time",
+      "body": "Customer's smart meter display shows the wrong time and the wrong peak hours. Talked her through a reset; display now correct."
+    },
+    {
+      "id": "T-10470",
+      "customer_id": "cus_2SA8FD",
+      "category": "payments",
+      "channel": "phone",
+      "status": "closed",
+      "priority": "normal",
+      "created_at": "2026-09-29T10:18:00Z",
+      "first_response_at": "2026-09-29T10:18:00Z",
+      "resolved_at": "2026-10-01T09:30:00Z",
+      "csat": 5,
+      "assignee": "sam.p",
+      "queue": "billing",
+      "tags": [
+        "payment-plan"
+      ],
+      "subject": "Payment plan",
+      "body": "Mr Adeyemi called, he has lost hours at work and can't pay the £310 balance in one go. Set up a payment plan of £45/month. Follow-up letter to the address on the account."
+    },
+    {
+      "id": "T-10474",
+      "customer_id": "cus_9WU3KJ",
+      "category": "billing",
+      "channel": "email",
+      "status": "closed",
+      "priority": "low",
+      "created_at": "2026-10-01T18:44:00Z",
+      "first_response_at": "2026-10-02T08:20:00Z",
+      "resolved_at": "2026-10-06T14:00:00Z",
+      "csat": 4,
+      "assignee": "sam.p",
+      "queue": "billing",
+      "tags": [
+        "credit-refund"
+      ],
+      "subject": "Credit balance",
+      "body": "Hi, I've got £230 in credit on my account. Can you refund it to my bank please? The details haven't changed.\n\nLucy"
+    },
+    {
+      "id": "T-10479",
+      "customer_id": "cus_6RM7QA",
+      "category": "complaint",
+      "channel": "web",
+      "status": "closed",
+      "priority": "high",
+      "created_at": "2026-10-05T16:02:00Z",
+      "first_response_at": "2026-10-06T09:10:00Z",
+      "resolved_at": "2026-10-09T11:48:00Z",
+      "csat": 2,
+      "assignee": "kerry.b",
+      "queue": "complaints",
+      "tags": [
+        "conduct"
+      ],
+      "subject": "Rude agent",
+      "body": "The agent I spoke to on Tuesday hung up on me. I want an apology."
+    },
+    {
+      "id": "T-10483",
+      "customer_id": "cus_1DK5PW",
+      "category": "tariff",
+      "channel": "email",
+      "status": "closed",
+      "priority": "low",
+      "created_at": "2026-10-06T07:30:00Z",
+      "first_response_at": "2026-10-06T10:05:00Z",
+      "resolved_at": "2026-10-07T09:12:00Z",
+      "csat": 5,
+      "assignee": "jordan.w",
+      "queue": "billing",
+      "tags": [
+        "ev"
+      ],
+      "subject": "EV tariff",
+      "body": "Do you have an EV tariff? I've just got a car and charge it overnight.\n\nEleanor"
+    },
+    {
+      "id": "T-10488",
+      "customer_id": "cus_8XT2NL",
+      "category": "complaint",
+      "channel": "email",
+      "status": "resolved",
+      "priority": "high",
+      "created_at": "2026-10-08T08:02:00Z",
+      "first_response_at": "2026-10-08T11:30:00Z",
+      "resolved_at": "2026-10-13T10:20:00Z",
+      "csat": 2,
+      "assignee": "kerry.b",
+      "queue": "complaints",
+      "tags": [
+        "refund",
+        "chaser"
+      ],
+      "subject": "Still no refund after 3 weeks",
+      "body": "This is my third email. You promised a refund of £74.20 on 22 September. I've attached the call log. Please call me on 07700 900951, or write to 5 Jesmond Grove, Newcastle NE2 1QQ.\n\nKwame Asante"
+    },
+    {
+      "id": "T-10491",
+      "customer_id": "cus_3BH6MV",
+      "category": "billing",
+      "channel": "web",
+      "status": "resolved",
+      "priority": "normal",
+      "created_at": "2026-10-09T21:15:00Z",
+      "first_response_at": "2026-10-10T08:50:00Z",
+      "resolved_at": "2026-10-12T14:05:00Z",
+      "csat": 4,
+      "assignee": "sam.p",
+      "queue": "billing",
+      "tags": [
+        "change-of-tenancy"
+      ],
+      "subject": "Wrong name on bill",
+      "body": "The bill is addressed to the previous tenant. I moved into 88 Victoria Street, Belfast BT1 3GN in August. My email is {{S19_EMAIL_17}}."
+    },
+    {
+      "id": "T-10494",
+      "customer_id": "cus_5LP0QE",
+      "category": "meter_reading",
+      "channel": "phone",
+      "status": "resolved",
+      "priority": "normal",
+      "created_at": "2026-10-12T15:58:00Z",
+      "first_response_at": "2026-10-12T15:58:00Z",
+      "resolved_at": "2026-10-12T16:30:00Z",
+      "csat": null,
+      "assignee": "amira.k",
+      "queue": "metering",
+      "tags": [
+        "psr"
+      ],
+      "subject": "Meter reading",
+      "body": "Customer read out his readings over the phone: E 30482, G 11927. Submitted. He asked for a call back if they look wrong."
+    },
+    {
+      "id": "T-10497",
+      "customer_id": "cus_4F8KQ2",
+      "category": "payments",
+      "channel": "email",
+      "status": "resolved",
+      "priority": "normal",
+      "created_at": "2026-10-13T12:20:00Z",
+      "first_response_at": "2026-10-13T14:02:00Z",
+      "resolved_at": "2026-10-14T09:45:00Z",
+      "csat": 3,
+      "assignee": "sam.p",
+      "queue": "billing",
+      "tags": [
+        "card-payment"
+      ],
+      "subject": "Card payment failed",
+      "body": "Tried to pay my bill online and it failed three times. Card is 5168 4412 9087 3306 exp 09/28. Can you take it over the phone instead? 07700 900461"
+    },
+    {
+      "id": "T-10500",
+      "customer_id": "cus_2LW8XP",
+      "category": "smart_meter",
+      "channel": "phone",
+      "status": "resolved",
+      "priority": "high",
+      "created_at": "2026-10-13T15:33:00Z",
+      "first_response_at": "2026-10-13T15:33:00Z",
+      "resolved_at": "2026-10-14T11:10:00Z",
+      "csat": 5,
+      "assignee": "jordan.w",
+      "queue": "metering",
+      "tags": [
+        "psr",
+        "install"
+      ],
+      "subject": "Smart meter install",
+      "body": "Booked a SMETS2 install for 21 Oct, AM slot. Customer is on the PSR and asked for the engineer to call ahead."
+    },
+    {
+      "id": "T-10503",
+      "customer_id": "cus_0VQ6TN",
+      "category": "complaint",
+      "channel": "email",
+      "status": "resolved",
+      "priority": "high",
+      "created_at": "2026-10-14T08:12:00Z",
+      "first_response_at": "2026-10-14T10:40:00Z",
+      "resolved_at": "2026-10-16T15:25:00Z",
+      "csat": 2,
+      "assignee": "kerry.b",
+      "queue": "complaints",
+      "tags": [
+        "estimate"
+      ],
+      "subject": "Re: Formal complaint about my bill",
+      "body": "Thanks for the call. The corrected bill still shows the estimated reading from July. I'm not paying until it's right.\n\nBen Ashworth"
+    },
+    {
+      "id": "T-10507",
+      "customer_id": "cus_7EJ4LS",
+      "category": "outage",
+      "channel": "web",
+      "status": "resolved",
+      "priority": "high",
+      "created_at": "2026-10-15T07:05:00Z",
+      "first_response_at": "2026-10-15T07:30:00Z",
+      "resolved_at": "2026-10-15T12:50:00Z",
+      "csat": 5,
+      "assignee": "amira.k",
+      "queue": "incident",
+      "tags": [
+        "gdn"
+      ],
+      "subject": "Gas supply off",
+      "body": "Gas went off this morning. Cadent came out, it was a fault on their side and it's fixed now. Just letting you know."
+    },
+    {
+      "id": "T-10510",
+      "customer_id": "cus_9TZ31M",
+      "category": "billing",
+      "channel": "email",
+      "status": "resolved",
+      "priority": "normal",
+      "created_at": "2026-10-15T09:41:00Z",
+      "first_response_at": "2026-10-15T13:00:00Z",
+      "resolved_at": "2026-10-17T10:35:00Z",
+      "csat": 3,
+      "assignee": "sam.p",
+      "queue": "billing",
+      "tags": [
+        "exit-fee"
+      ],
+      "subject": "Final bill query",
+      "body": "Why is there a £35 exit fee on my final bill? I was told there wasn't one.\n{{S19_EMAIL_02}} / 029 2018 0457"
+    },
+    {
+      "id": "T-10513",
+      "customer_id": "cus_6HD0RA",
+      "category": "tariff",
+      "channel": "chat",
+      "status": "resolved",
+      "priority": "low",
+      "created_at": "2026-10-16T18:20:00Z",
+      "first_response_at": "2026-10-16T18:20:00Z",
+      "resolved_at": "2026-10-16T18:34:00Z",
+      "csat": 5,
+      "assignee": "jordan.w",
+      "queue": "billing",
+      "tags": [
+        "switch"
+      ],
+      "subject": "Switching to Fix 24",
+      "body": "Chat transcript: customer wants to move to Fix 24 from November. Explained there is no exit fee on his current tariff. Switch booked."
+    },
+    {
+      "id": "T-10516",
+      "customer_id": "cus_1CR7YU",
+      "category": "complaint",
+      "channel": "email",
+      "status": "resolved",
+      "priority": "high",
+      "created_at": "2026-10-17T07:50:00Z",
+      "first_response_at": "2026-10-17T09:10:00Z",
+      "resolved_at": "2026-10-20T09:00:00Z",
+      "csat": null,
+      "assignee": "kerry.b",
+      "queue": "complaints",
+      "tags": [
+        "price-change"
+      ],
+      "subject": "Price increase letter",
+      "body": "Your letter says my unit rate is going up but the price cap went down. Please explain.\n\nDaniel Hughes\n77 Otley Road, Leeds LS16 5JT\n0113 496 0129"
+    },
+    {
+      "id": "T-10519",
+      "customer_id": "cus_8NB5VE",
+      "category": "moving_home",
+      "channel": "email",
+      "status": "pending",
+      "priority": "normal",
+      "created_at": "2026-10-17T11:26:00Z",
+      "first_response_at": "2026-10-17T14:00:00Z",
+      "resolved_at": null,
+      "csat": null,
+      "assignee": "amira.k",
+      "queue": "home_moves",
+      "tags": [
+        "final-bill"
+      ],
+      "subject": "Final bill not received",
+      "body": "I moved out on 30 September and still have no final bill. {{S19_EMAIL_05}}, +44 7700 900872"
+    },
+    {
+      "id": "T-10522",
+      "customer_id": "cus_5KM2ZB",
+      "category": "other",
+      "channel": "web",
+      "status": "open",
+      "priority": "normal",
+      "created_at": "2026-10-18T08:05:00Z",
+      "first_response_at": null,
+      "resolved_at": null,
+      "csat": null,
+      "assignee": "",
+      "queue": "general",
+      "tags": [
+        "app"
+      ],
+      "subject": "Login problem",
+      "body": "I can't log into the app since the update. The error says 'account locked'."
+    },
+    {
+      "id": "T-10525",
+      "customer_id": "cus_3PX9GW",
+      "category": "billing",
+      "channel": "email",
+      "status": "pending",
+      "priority": "normal",
+      "created_at": "2026-10-18T10:47:00Z",
+      "first_response_at": "2026-10-18T12:15:00Z",
+      "resolved_at": null,
+      "csat": null,
+      "assignee": "sam.p",
+      "queue": "billing",
+      "tags": [
+        "direct-debit"
+      ],
+      "subject": "Direct debit amount",
+      "body": "My direct debit went up to £128 from £95. Please review it."
+    },
+    {
+      "id": "T-10528",
+      "customer_id": "cus_2SA8FD",
+      "category": "smart_meter",
+      "channel": "phone",
+      "status": "open",
+      "priority": "normal",
+      "created_at": "2026-10-18T13:30:00Z",
+      "first_response_at": null,
+      "resolved_at": null,
+      "csat": null,
+      "assignee": "",
+      "queue": "metering",
+      "tags": [
+        "comms"
+      ],
+      "subject": "Meter offline",
+      "body": "Smart meter not sending readings since 10 Oct according to the app."
+    },
+    {
+      "id": "T-10531",
+      "customer_id": "cus_4YG1HC",
+      "category": "complaint",
+      "channel": "web",
+      "status": "open",
+      "priority": "high",
+      "created_at": "2026-10-18T19:02:00Z",
+      "first_response_at": null,
+      "resolved_at": null,
+      "csat": null,
+      "assignee": "",
+      "queue": "complaints",
+      "tags": [
+        "chaser"
+      ],
+      "subject": "Complaint not answered",
+      "body": "My complaint from last month hasn't been answered.\n\nChloe Martin"
+    }
+  ],
+  "refunds": [
+    {
+      "id": "R-2207",
+      "ticket_id": "T-10433",
+      "customer_id": "cus_6HD0RA",
+      "amount_pence": 9600,
+      "reason": "Duplicate direct debit",
+      "approved_by": "sam.p",
+      "created_at": "2026-09-16T13:10:00Z"
+    },
+    {
+      "id": "R-2211",
+      "ticket_id": "T-10446",
+      "customer_id": "cus_5KM2ZB",
+      "amount_pence": 5000,
+      "reason": "Goodwill credit as promised by phone",
+      "approved_by": "kerry.b",
+      "created_at": "2026-09-24T15:25:00Z"
+    },
+    {
+      "id": "R-2215",
+      "ticket_id": "T-10488",
+      "customer_id": "cus_8XT2NL",
+      "amount_pence": 7420,
+      "reason": "Overpayment refund",
+      "approved_by": "kerry.b",
+      "created_at": "2026-10-13T10:15:00Z"
+    }
+  ]
+}

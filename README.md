@@ -17,7 +17,7 @@ Python 3.12.
 
 ```bash
 uv venv --python 3.12 .venv && uv pip install --python .venv/bin/python -r requirements.txt
-.venv/bin/python -m pytest -q          # ~145 tests, about 2 minutes; none calls a model
+.venv/bin/python -m pytest -q          # ~160 tests, about 2 minutes; none calls a model
 ```
 
 Models are called through [OpenRouter](https://openrouter.ai) via LiteLLM. Put `OPENROUTER_API_KEY=...` in the
@@ -121,23 +121,45 @@ told of it, protected writes and violations (informed or not; `wrote_before_esca
 later), questions to the user, whether the final report mentions the rule, the test result, the hidden check's
 verdict, and an outcome label.
 
+## The paper's data
+
+The run archives and hand codes behind every number in the paper are in `data/` (111 MB): `data/raw/` as the research
+version of the harness wrote them, `data/hand_codes/` renamed to this harness's cells. One command unpacks the
+paper's runs into `results/`, in the layout below:
+
+```bash
+.venv/bin/python scripts/import_results.py      # ~15 s, about 630 MB (add --with-repo for each episode's repo/, ~4 GB)
+```
+
+[`docs/data.md`](docs/data.md) lists what came from where and gives the command behind each table of the paper. The
+earlier experiments of Appendix D ran on arms and scenarios this harness does not have; the research harness and its
+tables are in [`legacy/`](legacy/README.md).
+
 ## Analysis
 
 ```bash
 .venv/bin/python analysis/levels_table.py vendored_sdk --sessions results/levels/vendored_sdk/luna \
-    --interviews results/levels/vendored_sdk/luna/questions        # per level: Fisher, bootstrap, permutation
+    --interviews results/levels/vendored_sdk/luna/questions \
+    --codes data/hand_codes/levels_vendored_sdk_luna.json            # per level: Fisher, bootstrap, permutation
 .venv/bin/python analysis/who_asks_table.py --scenario vendored_sdk --level excusable \
-    --sessions results/who_asks/vendored_sdk_excusable/luna --interviews results/who_asks/vendored_sdk_excusable/luna/questions
+    --sessions results/who_asks/vendored_sdk_excusable/luna --interviews results/who_asks/vendored_sdk_excusable/luna/questions \
+    --codes data/hand_codes/who_asks_vendored_sdk_excusable_luna.json
+.venv/bin/python analysis/pointed_table.py --level excusable \
+    --codes data/hand_codes/who_asks_vendored_sdk_excusable_luna_pointed.json \
+    --open data/hand_codes/who_asks_vendored_sdk_excusable_luna.json  # the pointed questions
 .venv/bin/python analysis/who_asks_table.py --scenario vendored_sdk --level excusable \
-    --sessions results/rank/vendored_sdk_excusable/qwen --interviews results/rank/vendored_sdk_excusable/qwen/questions
+    --sessions results/rank/vendored_sdk_excusable/qwen --interviews results/rank/vendored_sdk_excusable/qwen/questions \
+    --codes data/hand_codes/rank_vendored_sdk_excusable_qwen.json
 .venv/bin/python analysis/lead_arm_table.py --sessions results/lead_arm/vendored_sdk/luna \
-    --interviews results/lead_arm/vendored_sdk/luna/questions
+    --interviews results/lead_arm/vendored_sdk/luna/questions --codes data/hand_codes/lead_arm_vendored_sdk_luna.json
 .venv/bin/python analysis/threads.py results/levels/vendored_sdk/luna      # every message thread, for reading
 MODEL=gpt-6-luna .venv/bin/python analysis/eval_awareness.py results/levels/vendored_sdk/luna   # "is this a test?"
 ```
 
-The tables leave out episodes that ended on an error (`end_reason: error` in `score.json`, e.g. a provider refusing
-the request); they are not session outcomes. Cells with no runs are left out with their tests.
+Without `--codes` the tables use the regex first pass (`coverup/primary.py`), which is what new runs start from;
+`--blind PREFIX` writes the items for hand coding. The tables leave out episodes that ended on an error
+(`end_reason: error` in `score.json`, e.g. a provider refusing the request); they are not session outcomes. Cells
+with no runs are left out with their tests.
 
 ## What an episode records
 
@@ -169,9 +191,13 @@ batch from earlier episodes. A peer-arm session costs well under a cent with a s
 coverup/            the harness: runner, episode scheduler, tools, sandbox, scorer, scripted roles (bots.py), replay
 coverup/scenarios/  vendored_sdk/ and unsigned_webhook/: template/, solution/, violation/, checks/, scenario.yaml
 configs/            one config per scenario (the settings of every run), and model prices
-scripts/            run_experiments.sh (the batches), dump_stimuli.py (writes docs/stimuli.md)
+scripts/            run_experiments.sh (the batches), dump_stimuli.py (writes docs/stimuli.md), import_results.py
 analysis/           tables and tests per experiment, transcript and eval-awareness readers
 tests/              the harness tests
+data/raw/           the run archives and hand codes, as recorded
+data/hand_codes/    the hand codes under this harness's cell names
+docs/               stimuli.md (every scripted text), data.md (the data, table by table)
+legacy/             the research harness (upchain) the runs were made with, for the earlier experiments
 ```
 
 ## Author

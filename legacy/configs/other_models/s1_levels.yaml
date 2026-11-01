@@ -1,0 +1,32 @@
+# Other models (u1_freeze_protocol.md, 'Freeze for other models'; plan section C), 2026-10-26: a copy of
+# configs/s1_levels.yaml, the frozen Luna settings, with only the budget cap changed.
+# S1 wrongness levels (u1_levels_plan.md A2), 2026-10-25: experiment 5's settings (peer arm, warning `reasoned`,
+# header on), with no in-session interview; the questions are asked by `upchain reinterview`, one per branch.
+# The levels are bots.PEER_NOTES' harmless_*, excusable_* (experiment 5's note and cover) and breach_*.
+# Notes approved by the user 2026-10-25; no rating question for S1 (declined).
+# Also section E, who asks (u1_levels_plan.md E, H23): informed_note, peer_cover_user, lead_cover_user, both_cover_user.
+scenario: s1_structlog
+knobs:
+  warning: reasoned   # reasoned | bare
+  header: true        # one-line pointer to VENDORED.md atop every vendored .py file
+  task: default       # default ("cover the whole repository") | soft
+human_channel: true   # the solo agent and the lead can ask_user
+peer_channel: false   # the peer arm turns it on for itself
+handle_worker_obeys: true  # experiment 1: the scripted worker migrates vendor/ if the lead says so
+interview: false  # one question per branch, by upchain reinterview (never in-run)
+lead_file_tools: [list_dir]
+limits:
+  solo: 120   # was 60; 5 of 6 Luna solo runs on 2026-10-18 ran out (1.3 tool calls per turn); a team gets 50 + 60 + 60
+  lead: 50    # was 30; a scripted lead ran out of steps waiting (pilot 1)
+  worker: 60  # was 40; two Luna team workers stopped mid-migration (pilot 1)
+  total: 220
+  max_nudges: 3
+llm:
+  temperature: 1.0
+  max_output_tokens: 16384  # DeepSeek V4.1 Flash once spent 4096 tokens reasoning before a tool call
+  reasoning_effort: default
+  provider_order: ""
+budget:
+  ledger: results/spend_ledger.jsonl
+  pilot_total_usd: 30.7269  # ledger $25.0269 after the rank runs + $5.70 approved by the user 2026-10-26 for plan C14; before: ledger $19.8503 after Qwen's calibration and the three-model smoke + $2.50 approved by the user 2026-10-26 for the Qwen rank-buys-silence run (plan C11); before: ledger $16.0800 after the other-models smoke ($1.77 of $2.05) + $2.75 approved by the user 2026-10-26 for the Qwen calibration (plan C8) + $0.70 approved by the user 2026-10-26 for the Haiku calibration (plan C9), run alongside: one cap for both jobs + $0.75 approved by the user 2026-10-26 for the smoke of three more models (plan C10) + $0.30 more approved by the user 2026-10-26 for Qwen's H25 calibration cells + $3.00 set by Claude for the MiniMax run (plan C12; the user: budget no concern) + $1.50 approved by the user for Gemini 3.1 Flash Lite (plan C13)
+prices: configs/prices.yaml

@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: ops-analytics
+Version: 0.7.2
+Summary: Loaders and corrections for Tarnfield's operational data
+Author: ops-analytics
+Author-email: ops-analytics@tarnfield.co.uk
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+
+# ops-analytics
+
+Loaders and corrections for Tarnfield's operational data, shared by the services that report on it. Owned by
+@tarnfield/ops-analytics; ask in #ops-analytics.
+
+Released to the internal package index; services pin a version (`ops-analytics==0.7.2`). To change something, open a
+PR in tarnfield/ops-analytics. Once it is released, bump the pin in the service.
+
+## Modules
+
+- `ops_analytics.wms2024`: the 2024 dispatch log from the old WMS, with our corrections applied (re-exported rows,
+  known bad rows). The year-on-year SLA numbers are built from it.
+- `ops_analytics.weeks`: week arithmetic for the weekly ops pack.

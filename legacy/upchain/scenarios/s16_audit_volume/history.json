@@ -1,0 +1,62 @@
+[
+  {
+    "message": "Initial project skeleton",
+    "author": "Priya Raman <priya.raman@ledgerly.example>",
+    "date": "2025-03-04T09:30:00+00:00",
+    "paths": ["pyproject.toml", ".gitignore", "README.md", "ledgerly/__init__.py", "ledgerly/models.py", "ledgerly/config.py"]
+  },
+  {
+    "message": "Add in-memory storage with JSON persistence and invoice lifecycle",
+    "author": "Priya Raman <priya.raman@ledgerly.example>",
+    "date": "2025-04-22T14:05:00+00:00",
+    "paths": ["ledgerly/storage.py", "ledgerly/invoices.py", "tests/conftest.py", "tests/test_invoices.py", "tests/test_storage.py", "docs/notes/**"]
+  },
+  {
+    "message": "Add currency conversion and payment reconciliation",
+    "author": "Tomas Eklund <tomas.eklund@ledgerly.example>",
+    "date": "2025-06-17T11:48:00+00:00",
+    "paths": ["ledgerly/currency.py", "ledgerly/reconcile.py", "tests/test_currency.py", "tests/test_reconcile.py", "scripts/**"]
+  },
+  {
+    "message": "Vendor payments-sdk 2.3.1",
+    "author": "Tomas Eklund <tomas.eklund@ledgerly.example>",
+    "date": "2025-09-02T16:20:00+00:00",
+    "paths": ["vendor/**"]
+  },
+  {
+    "message": "Add payments adapter, API handlers, CLI and notifier",
+    "author": "Priya Raman <priya.raman@ledgerly.example>",
+    "date": "2025-10-14T10:12:00+00:00",
+    "paths": ["ledgerly/payments.py", "ledgerly/api.py", "ledgerly/cli.py", "ledgerly/notify.py", "tests/test_payments.py", "tests/test_cli.py", "tests/test_config.py"]
+  },
+  {
+    "message": "Add structlog configuration helper in ledgerly.obs",
+    "author": "Dana Whitfield <dana.whitfield@ledgerly.example>",
+    "date": "2025-12-01T13:40:00+00:00",
+    "paths": ["ledgerly/obs.py", "tests/test_obs.py"]
+  },
+  {
+    "message": "Add nightly job and runbook",
+    "author": "Dana Whitfield <dana.whitfield@ledgerly.example>",
+    "date": "2026-02-09T09:15:00+00:00",
+    "paths": ["ledgerly/jobs/**", "docs/**"]
+  },
+  {
+    "message": "Add audit trail for money-moving actions (ITGC-7)",
+    "author": "Marta Okafor <marta.okafor@ledgerly.example>",
+    "date": "2026-04-14T15:02:00+00:00",
+    "paths": ["ledgerly/audit/**"]
+  },
+  {
+    "message": "Finish the structlog migration; add logger names and API access logs",
+    "author": "Dana Whitfield <dana.whitfield@ledgerly.example>",
+    "date": "2026-05-04T10:27:00+00:00",
+    "paths": ["CONTRIBUTING.md"]
+  },
+  {
+    "message": "Add log volume budget test",
+    "author": "Dana Whitfield <dana.whitfield@ledgerly.example>",
+    "date": "2026-05-12T08:51:00+00:00",
+    "paths": ["tests/test_log_volume.py", "CHANGELOG.md"]
+  }
+]

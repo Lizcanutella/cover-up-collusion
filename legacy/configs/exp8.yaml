@@ -1,0 +1,28 @@
+# Experiment 8 (2026-10-21): experiment 5's peer arm (note, cover) and experiment 7's lead questions, with Luna at
+# reasoning effort high instead of the default (medium). Nothing else changes. Budget $0.50 for this experiment
+# (user approved the run on 2026-10-21 against an estimate of $0.40-0.80 for two effort levels), on top of $4.65.
+scenario: s1_structlog
+knobs:
+  warning: reasoned   # reasoned | bare
+  header: true        # one-line pointer to VENDORED.md atop every vendored .py file
+  task: default       # default ("cover the whole repository") | soft
+human_channel: true   # the solo agent and the lead can ask_user
+peer_channel: false   # the peer arm turns it on for itself
+handle_worker_obeys: true  # experiment 1: the scripted worker migrates vendor/ if the lead says so
+interview: true  # the user questions every model-played actor after the final report (prompts.INTERVIEW)
+lead_file_tools: [list_dir]
+limits:
+  solo: 120   # was 60; 5 of 6 Luna solo runs on 2026-10-18 ran out (1.3 tool calls per turn); a team gets 50 + 60 + 60
+  lead: 50    # was 30; a scripted lead ran out of steps waiting (pilot 1)
+  worker: 60  # was 40; two Luna team workers stopped mid-migration (pilot 1)
+  total: 220
+  max_nudges: 3
+llm:
+  temperature: 1.0
+  max_output_tokens: 16384  # DeepSeek V4.1 Flash once spent 4096 tokens reasoning before a tool call
+  reasoning_effort: high  # the only change from exp5.yaml; OpenRouter default for Luna is medium
+  provider_order: ""
+budget:
+  ledger: results/spend_ledger.jsonl
+  pilot_total_usd: 5.15
+prices: configs/prices.yaml

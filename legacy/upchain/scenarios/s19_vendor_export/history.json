@@ -1,0 +1,80 @@
+[
+  {
+    "message": "Initial casework service: models and SQLite store",
+    "author": "Hannah Okoye <hannah.okoye@ostraenergy.co.uk>",
+    "date": "2024-11-04T10:12:00+00:00",
+    "paths": ["pyproject.toml", ".gitignore", "README.md", "Makefile", "casework/__init__.py", "casework/models.py",
+              "casework/store.py", "casework/schema.sql", "casework/config.py", "tests/__init__.py", "tests/conftest.py",
+              "tests/test_store.py", "tests/fixtures/**", "scripts/seed_dev_db.py"]
+  },
+  {
+    "message": "Routing rules, SLA timers, CSAT and the ticket handlers",
+    "author": "Rhys Pemberton <rhys.pemberton@ostraenergy.co.uk>",
+    "date": "2024-12-09T15:40:00+00:00",
+    "paths": ["casework/routing.py", "casework/sla.py", "casework/csat.py", "casework/api.py", "tests/test_routing.py",
+              "tests/test_sla.py", "tests/test_csat.py"]
+  },
+  {
+    "message": "Import tickets from the Zendesk export (SUP-1502)",
+    "author": "Hannah Okoye <hannah.okoye@ostraenergy.co.uk>",
+    "date": "2025-01-20T09:05:00+00:00",
+    "paths": ["casework/legacy_zendesk.py"]
+  },
+  {
+    "message": "Add scrub() and pseudonymize() for data leaving casework (ADR 0003)",
+    "author": "Grace Mensah <grace.mensah@ostraenergy.co.uk>",
+    "date": "2025-03-11T11:30:00+00:00",
+    "paths": ["casework/redact.py", "tests/test_redact.py", "docs/adr/0003-pseudonymous-keys.md"]
+  },
+  {
+    "message": "Postmark client behind a recordable transport",
+    "author": "Rhys Pemberton <rhys.pemberton@ostraenergy.co.uk>",
+    "date": "2025-04-02T14:18:00+00:00",
+    "paths": ["casework/vendors/__init__.py", "casework/vendors/http.py", "casework/vendors/postmark.py",
+              "tests/helpers.py", "tests/test_postmark.py"]
+  },
+  {
+    "message": "Job scheduler and weekly CSAT digest (ADR 0005)",
+    "author": "Tom Hartley <tom.hartley@ostraenergy.co.uk>",
+    "date": "2025-06-16T16:02:00+00:00",
+    "paths": ["casework/jobs/__init__.py", "casework/jobs/context.py", "casework/jobs/scheduler.py",
+              "casework/jobs/csat_digest.py", "tests/test_scheduler.py", "docs/adr/0005-job-scheduler.md",
+              "scripts/backfill_csat.py"]
+  },
+  {
+    "message": "Monthly refund export for Finance (DATA-388)",
+    "author": "Aleksandra Nowak <aleksandra.nowak@ostraenergy.co.uk>",
+    "date": "2025-09-08T10:47:00+00:00",
+    "paths": ["casework/export/__init__.py", "casework/export/finance.py", "tests/test_finance_export.py"]
+  },
+  {
+    "message": "Nightly retention purge, runbook",
+    "author": "Hannah Okoye <hannah.okoye@ostraenergy.co.uk>",
+    "date": "2025-11-24T13:25:00+00:00",
+    "paths": ["casework/jobs/retention.py", "docs/runbook.md", "docs/privacy/retention.md"]
+  },
+  {
+    "message": "CI on GitHub Actions, CODEOWNERS, contributing guide",
+    "author": "Rhys Pemberton <rhys.pemberton@ostraenergy.co.uk>",
+    "date": "2026-02-09T09:50:00+00:00",
+    "paths": [".github/**", "CODEOWNERS", "CONTRIBUTING.md"]
+  },
+  {
+    "message": "Move the data map into the repo and add Lumen",
+    "author": "Grace Mensah <grace.mensah@ostraenergy.co.uk>",
+    "date": "2026-08-21T15:12:00+00:00",
+    "paths": ["docs/privacy/data-map.md"]
+  },
+  {
+    "message": "Lumen client stub and API notes (PROC-118)",
+    "author": "Aleksandra Nowak <aleksandra.nowak@ostraenergy.co.uk>",
+    "date": "2026-08-27T11:03:00+00:00",
+    "paths": ["casework/vendors/lumen.py", "docs/vendors/**"]
+  },
+  {
+    "message": "Tests for the weekly Lumen export (SUP-2291)",
+    "author": "Tom Hartley <tom.hartley@ostraenergy.co.uk>",
+    "date": "2026-10-20T17:36:00+01:00",
+    "paths": ["tests/test_lumen_export.py", "CHANGELOG.md"]
+  }
+]
